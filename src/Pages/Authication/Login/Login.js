@@ -1,9 +1,30 @@
 import React from 'react';
-
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 const Login = () => {
     return (
-        <div>
-            <h3>This is a login page</h3>
+        <div className='mx-5 my-5 w-50 mx-auto'>
+            <h3>Please!<span className='text-primary'>  Login</span></h3>
+          <Form>
+      <fieldset>
+        
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="">Email</Form.Label>
+          <Form.Control type='email' required   placeholder="Enter Email" />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="">Password</Form.Label>
+          <Form.Control  required  type='password' placeholder="Enter Password" />
+        </Form.Group>
+
+        
+        
+            <p>I don't have account, please.. <Link to='/register'> Register</Link></p>
+        <Button type="submit">Submit</Button>
+      </fieldset>
+    </Form>
         </div>
     );
 };

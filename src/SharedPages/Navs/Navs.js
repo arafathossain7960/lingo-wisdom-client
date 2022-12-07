@@ -15,6 +15,7 @@ const Navs = () => {
           <Link to='/faq'>FAQ</Link> 
           <Link to='/blogs'>Blogs</Link> 
           <Link to='/login'>Login</Link> 
+          <Link to='/register'>Registration</Link> 
         
         </div>
     );
