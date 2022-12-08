@@ -9,12 +9,13 @@ const CourseDetails = () => {
         .then(res => res.json())
         .then(data => setLanguageDetails(data))
     },[])
-   
+    const {title, img}= languageDetails;
     return (
         <div>
             <h1>this is a details pages {id}</h1>
-            <img src={languageDetails.img} alt="" />
-            <p>{languageDetails.title}</p>
+            <h1>{title}</h1>
+            <h4>{}</h4>
+            
         </div>
     );
 };
