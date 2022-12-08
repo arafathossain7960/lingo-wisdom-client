@@ -1,15 +1,10 @@
 import React from 'react';
+import Sidebar from './Sidebar/Sidebar';
 
 const Course = () => {
     return (
         <div>
-            <h4> here is the courses</h4>
-            <p>Arabic </p>
-            <p> English</p>
-            <p> Japanese</p>
-            <p> Bengali</p>
-            <p> Korean</p>
-            <p> Chinese</p>
+           <Sidebar></Sidebar>
         </div>
     );
 };
