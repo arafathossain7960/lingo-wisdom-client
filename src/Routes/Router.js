@@ -5,9 +5,11 @@ import Register from "../Pages/Authication/Register/Register";
 import Blogs from "../Pages/Blogs/Blogs";
 import Course from "../Pages/Course/Course";
 import CourseDetails from "../Pages/Course/CourseDetails/CourseDetails";
+import ProAccess from "../Pages/Course/ProAccess/ProAccess";
 import Faq from "../Pages/FAQ/Faq";
 import Home from "../Pages/Home/Home";
 import NotFound from "../Pages/NotFound/NotFound";
+import PrivetRoute from "../PrivetRoute/PrivetRoute";
 
 
 export const router = createBrowserRouter([
@@ -34,6 +36,12 @@ export const router = createBrowserRouter([
         {
             path:'/faq',
             element:<Faq></Faq>
+        },
+        {
+            path:'/proAccess',
+            element:<PrivetRoute>
+                <ProAccess></ProAccess>
+            </PrivetRoute>
         },
         {
             path:'/course-details/:id',

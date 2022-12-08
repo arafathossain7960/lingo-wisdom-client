@@ -1,22 +1,41 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
+import { LingoAuthContext } from '../../../Context/UserContext';
+
+
 const Login = () => {
+  const {loginUser}=useContext(LingoAuthContext);
+  const loginWithEmailAndPassword =(e)=>{
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    loginUser(email, password)
+    .then(result =>{
+      console.log(result.user)
+    })
+    .then(error => {
+      console.log('this is error from email and password login', error.massage)
+    })
+
+
+
+  }
     return (
         <div className='mx-5 my-5 w-50 mx-auto'>
             <h3>Please!<span className='text-primary'>  Login</span></h3>
-          <Form>
+          <Form onSubmit={loginWithEmailAndPassword}>
       <fieldset>
         
         <Form.Group className="mb-3">
           <Form.Label htmlFor="">Email</Form.Label>
-          <Form.Control type='email' required   placeholder="Enter Email" />
+          <Form.Control name='email' type='email' required   placeholder="Enter Email" />
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label htmlFor="">Password</Form.Label>
-          <Form.Control  required  type='password' placeholder="Enter Password" />
+          <Form.Control name='password'  required  type='password' placeholder="Enter Password" />
         </Form.Group>
 
         
