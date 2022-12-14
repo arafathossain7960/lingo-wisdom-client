@@ -14,7 +14,6 @@ const Navs = () => {
           </span>
           <Link to='/home'>Home</Link> 
           <Link to='/course'>Course</Link> 
-          <Link to='/faq'>FAQ</Link> 
           <Link to='/blogs'>Blogs</Link> 
          {
            user?.email ? <>

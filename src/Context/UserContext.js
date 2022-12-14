@@ -16,25 +16,31 @@ const auth = getAuth(app);
 
 
 const UserContext = ({children}) => {
-    const [user, setUser]=useState({})
+    const [user, setUser]=useState({});
+    const [loading, setLoading]=useState(true);
+
 
     // google sign in 
 const googleSignIn = ()=>{
+    setLoading(true)
     return signInWithPopup(auth, googleProvider);
 }
 
 // github sign in
 const githubSignIn =()=>{
+    setLoading(true)
     return signInWithPopup(auth, githubProvider);
 }
 
 // email and password with create user
 const emailAndPasswordSign =(email, password)=>{
+    setLoading(true)
    return createUserWithEmailAndPassword(auth, email, password)
 } 
 
 // login with email and password
 const loginUser =(email, password)=>{
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
 }
 // login out 
@@ -53,6 +59,7 @@ useEffect(()=>{
    const unSubscribe = onAuthStateChanged(auth, (currentUser )=>{
         if(currentUser){
             setUser(currentUser)
+            setLoading(false)
         }else{
             setUser({})
         }
@@ -62,7 +69,7 @@ useEffect(()=>{
 
 
 
-const lingoAuth = {user,loginUser, emailAndPasswordSign , googleSignIn, githubSignIn, loginOutUser  };
+const lingoAuth = {user, loading,loginUser, emailAndPasswordSign , googleSignIn, githubSignIn, loginOutUser  };
     return (
        <LingoAuthContext.Provider value={lingoAuth}  >
         {children}

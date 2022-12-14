@@ -1,3 +1,6 @@
 .blog-container{
-background-color: lightgray;
+background-color: rgba(237, 232, 232, 0.787);
+}
+.blog-title{
+    color: #FF9933;
 }

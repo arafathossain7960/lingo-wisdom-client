@@ -9,7 +9,7 @@ const Login = () => {
   const {loginUser}=useContext(LingoAuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.pathName ||  '/';
+  const from = location.state?.from?.pathname || "/";
   const loginWithEmailAndPassword =(e)=>{
     e.preventDefault();
     const email = e.target.email.value;
@@ -17,7 +17,7 @@ const Login = () => {
     loginUser(email, password)
     .then(result =>{
       console.log(result.user)
-      navigate(from, {replace:true})
+      navigate(from, { replace: true });
       
     })
     .then(error => {
