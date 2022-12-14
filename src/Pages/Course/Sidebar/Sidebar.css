@@ -1,0 +1,18 @@
+.sidebar{
+    background-color: #cccccc;
+   
+}
+.sidebar a{
+    text-decoration: none;
+    color: #003399;
+    transition: 0.8s;
+}
+.sidebar a:hover{
+    color: #FF9933;
+}
+
+/* sidebar main width  */
+.sidebar-width{
+    width: 15%;
+}
+

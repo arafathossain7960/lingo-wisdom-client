@@ -18,7 +18,8 @@ const CourseDetails = () => {
   
 
 
-    const {title, description}= languageDetails;
+    const {title, description, photo_url}= languageDetails;
+    console.log(languageDetails)
     return (
         <div className='mx-auto p-5'>
             <div className='bg-dark w-100 py-5 my-5 text-light text-center'>
@@ -27,8 +28,9 @@ const CourseDetails = () => {
             </div>
             
             <h1>{title}</h1>
+        
             <h3><b>Description :</b>  {description}</h3>
-          
+          <img src={photo_url} alt="" />
             <br /><br />
            <Link to="/proAccess"> <Button>Get pro access</Button></Link>
         </div>

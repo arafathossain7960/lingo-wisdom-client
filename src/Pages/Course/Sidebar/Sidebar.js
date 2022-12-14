@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Sidebar.css';
 
 const Sidebar = () => {
     const [language, setLanguage]=useState([]);
@@ -11,7 +12,7 @@ const Sidebar = () => {
     },[])
   
     return (
-        <div>
+        <div className='sidebar px-3 py-2 '>
             {
                 language.map(lingo => <p key={lingo.id}>
                     <Link to={`/course-details/${lingo.id}`}>{lingo.languageName}</Link>
