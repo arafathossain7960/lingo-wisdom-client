@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { LingoAuthContext } from '../../../Context/UserContext';
 
 
 const Login = () => {
   const {loginUser}=useContext(LingoAuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.pathName ||  '/';
   const loginWithEmailAndPassword =(e)=>{
     e.preventDefault();
     const email = e.target.email.value;
@@ -14,6 +17,8 @@ const Login = () => {
     loginUser(email, password)
     .then(result =>{
       console.log(result.user)
+      navigate(from, {replace:true})
+      
     })
     .then(error => {
       console.log('this is error from email and password login', error.massage)

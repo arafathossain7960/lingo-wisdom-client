@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link,  useParams } from 'react-router-dom';
 import { LingoAuthContext } from '../../../Context/UserContext';
-import ProAccess from '../ProAccess/ProAccess';
+
 
 const CourseDetails = () => {
     const [languageDetails, setLanguageDetails]=useState({});
