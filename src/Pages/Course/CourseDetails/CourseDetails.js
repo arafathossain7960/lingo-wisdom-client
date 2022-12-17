@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { Link,  useParams } from 'react-router-dom';
 import { LingoAuthContext } from '../../../Context/UserContext';
-
+import './CourseDetails.css';
 
 const CourseDetails = () => {
     const [languageDetails, setLanguageDetails]=useState({});
@@ -18,21 +18,26 @@ const CourseDetails = () => {
   
 
 
-    const {title, description, photo_url}= languageDetails;
+    const {title, description, photo_url,courseName,feature,certification}= languageDetails;
     console.log(languageDetails)
     return (
         <div className='mx-auto p-5'>
-            <div className='bg-dark w-100 py-5 my-5 text-light text-center'>
-                <h1>this is the course details header</h1>
+            <div className='courseDetailsHeader w-100 py-5  text-light text-center'>
+                <h3>Let's explore <span>{title}</span> with fun</h3>
+                <button>Download course feature</button>
 
             </div>
-            
-            <h1>{title}</h1>
-        
-            <h3><b>Description :</b>  {description}</h3>
+         <div>
           <img src={photo_url} alt="" />
-            <br /><br />
+           <h4 >Course Name : {courseName} </h4>
+            <h5><b>Description :</b> </h5>
+            <p>{description}</p>
+            <h6>Course features</h6>
+           <ul>
+            
+           </ul>
            <Link to="/proAccess"> <Button>Get pro access</Button></Link>
+         </div>
         </div>
     );
 };
