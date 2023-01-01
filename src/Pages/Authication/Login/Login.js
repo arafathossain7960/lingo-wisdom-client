@@ -6,7 +6,7 @@ import { LingoAuthContext } from '../../../Context/UserContext';
 
 
 const Login = () => {
-  const {loginUser}=useContext(LingoAuthContext);
+  const {loginUser, theme}=useContext(LingoAuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
@@ -23,12 +23,14 @@ const Login = () => {
     .then(error => {
       console.log('this is error from email and password login', error.massage)
     })
+}
 
-
-
-  }
+  
     return (
-        <div className='mx-5 my-5 w-50 mx-auto'>
+       <div className={`mx-5 my-5 w-50 mx-auto ${theme ==='light' && 'courseTextWhite'}`}>
+        
+    
+     
             <h3>Please!<span className='text-primary'>  Login</span></h3>
           <Form onSubmit={loginWithEmailAndPassword}>
       <fieldset>

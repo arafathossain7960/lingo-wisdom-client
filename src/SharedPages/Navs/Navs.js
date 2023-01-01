@@ -5,7 +5,8 @@ import logo from '../../img/logo.png';
 import './Naves.css';
 
 const Navs = () => {
-  const {user, loginOutUser }=useContext(LingoAuthContext)
+  const {user, loginOutUser, toggleTheme,theme }=useContext(LingoAuthContext);
+  console.log(user)
     return (
         <div className='mainNavbar py-2 d-flex align-items-center justify-content-evenly '>
           <span>
@@ -23,11 +24,10 @@ const Navs = () => {
           :<>
          
            <Link to='/login'>Login</Link> 
-           <Link to='/register'>Registration</Link>
           </>
            
          }
-        
+        <Link onClick={toggleTheme}>{theme}</Link>
         </div>
     );
 };

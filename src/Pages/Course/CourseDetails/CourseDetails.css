@@ -1,3 +1,7 @@
 .courseDetailsHeader{
     background-image: linear-gradient( rgb(95, 154, 174),lightgray);
 }
+
+.courseTextWhite{
+    color: white;
+}

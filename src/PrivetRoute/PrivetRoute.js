@@ -6,7 +6,7 @@ const PrivetRoute = ({children}) => {
     const {user, loading} = useContext(LingoAuthContext);
     const location = useLocation();
     if(loading){
-        return <div>Loading ... </div>
+        return <div className='text-center my-5'>Loading ... </div>
     }
    if(user && user?.uid){
     return children;

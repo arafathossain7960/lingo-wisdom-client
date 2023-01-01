@@ -1,4 +1,14 @@
 /* style of main course page  */
 .courseBody{
-    display:flex
+   margin: 5px;
+   color:black;
+   background-color: lightblue;
+   border: 0.8px solid blue;
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.courseBodyTitle a{
+    text-decoration: none;
+   
 }

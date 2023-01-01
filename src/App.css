@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+ /* light and dark mood style */
+
+ #dark{
+  background-color: Lightgray;
+ }
+ #light{
+  background-color: rgb(67, 84, 89);
+ }
