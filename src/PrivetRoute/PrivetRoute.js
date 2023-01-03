@@ -8,10 +8,11 @@ const PrivetRoute = ({children}) => {
     if(loading){
         return <div className='text-center my-5'>Loading ... </div>
     }
-   if(user && user?.uid){
-    return children;
+   if(!user?.email && !user?.uid){
+    return <Navigate to="/login" state={{from:location}} replace />
+
    }else{
-   return <Navigate to="/login" state={{from:location}} replace></Navigate>
+   return  children;
    }
 };
 

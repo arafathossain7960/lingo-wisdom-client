@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
         {
             path:'/course',
             loader:()=>{
-                return fetch('http://localhost:5000/language')
+                return fetch('https://lingo-wisdom-server-side.vercel.app/language')
 
             },
             element:<Course></Course>

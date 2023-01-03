@@ -10,7 +10,7 @@ const CourseDetails = () => {
     const {id} = useParams();
     const {user, theme }= useContext(LingoAuthContext);
     useEffect(()=>{
-        fetch(`http://localhost:5000/details/${id}`)
+        fetch(`https://lingo-wisdom-server-side.vercel.app/details/${id}`)
         .then(res => res.json())
         .then(data => setLanguageDetails(data))
     },[])

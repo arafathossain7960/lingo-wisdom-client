@@ -6,7 +6,7 @@ const Sidebar = () => {
     const [language, setLanguage]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/language')
+        fetch('https://lingo-wisdom-server-side.vercel.app/language')
         .then(res => res.json())
         .then(data => setLanguage(data))
     },[])
